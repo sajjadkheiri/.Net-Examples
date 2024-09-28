@@ -1,6 +1,11 @@
+using Net_Example.Platform;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.ConfiguringServices();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.ConfiguringPipeLines();
 
 app.Run();

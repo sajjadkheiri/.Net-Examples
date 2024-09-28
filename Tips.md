@@ -28,6 +28,19 @@
 
 ### Kestrel
 
-- Hosted service (IHostedService)
+- Hosted service (IHostedService):
+
+It is a long running task
+
+### Service
+
+
 
 ### Middleware
+
+- Types of middleware
+    1. short circuit middleware
+    2. Terminal middleware
+
+- Map
+
