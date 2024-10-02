@@ -60,3 +60,20 @@ MW Response 3 => MW Response 2 => MW Response 1
 [!important] When you have a map with some middlewares, the pipeline just excute your special map.what if you may have other middlewares.
 
 
+### Routing
+
+### Inversion of control (IOC)
+A class must just implement the business that you need.Otherwise,
+every work must be inverted in other class.
+
+Key Benefits of IoC:
+
+- **Decoupling:** Objects rely less on actual implementations and more on abstractions, making the system more modular.
+
+- **Ease of Testing:** With dependencies injected, it is easier to replace genuine dependencies with mocks or stubs, enabling unit testing.
+
+- **Flexibility:** Changes to system behavior or configurations can be made without altering the source code, which improves maintenance.
+
+### Dependecy inversion principal
+
+### Dependency Injection (DI)
