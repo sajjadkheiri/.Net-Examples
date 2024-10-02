@@ -38,26 +38,34 @@ It is a long running task
 
 ### Middleware
 
-[!important] Middleware is registered once and It uses until the program is running
+> [!IMPORTANT]
+> Middleware is registered once and It uses until the program is running
 
-[!important] At the end of middleware, you must call Next() method
-to continue middlewares
+> [!IMPORTANT]
+> At the end of middleware, you must call Next() method to continue middlewares
 
-[!important] When the middleware is started,ordering is crucial.It means that First running middleware will come back the last response.
+> [!TIP]
+> When the middleware is started,ordering is crucial.It means that First running middleware will come back the last response.
+ <br /> MW Request 1 => MW Request 2 => MW Request 3
+ <br /> MW Response 3 => MW Response 2 => MW Response 1 
 
-MW Request 1 => MW Request 2 => MW Request 3
-MW Response 3 => MW Response 2 => MW Response 1 
+<br />
 
+#### Types of middleware
 
-- Types of middleware
+- short circuit middleware:
 
-    1. short circuit middleware : 
+- Terminal middleware:
+      
+<br />
 
-    2. Terminal middleware
+#### Map
+When you want to excute middlewares in a particular route, you can add Map() in the Configure Pipeline.
 
-- Map : When you want to excute middlewares in a particular route, you can add Map() in the ConfigurePipeline.
+<br />
 
-[!important] When you have a map with some middlewares, the pipeline just excute your special map.what if you may have other middlewares.
+> [!TIP]
+>  When you have a map with some middlewares, the pipeline just excute your special map.what if you may have other middlewares.
 
 
 ### Routing
