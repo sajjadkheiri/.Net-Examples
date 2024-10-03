@@ -1,4 +1,4 @@
-﻿namespace Net_Example.DIP;
+﻿namespace Net_Example.Dependency.Ioc;
 
 public class FirstSample
 {

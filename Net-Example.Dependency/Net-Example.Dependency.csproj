@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Net_Example.DI</RootNamespace>
+    <RootNamespace>Net_Example.Dependency</RootNamespace>
   </PropertyGroup>
 
 </Project>

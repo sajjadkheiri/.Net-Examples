@@ -70,7 +70,10 @@ When you want to excute middlewares in a particular route, you can add Map() in 
 
 ### Routing
 
-### Inversion of control (IOC)
+
+### Dependency
+
+#### 1. Inversion of control (IOC)
 A class must just implement the business that you need.Otherwise,
 every work must be inverted in other class.
 
@@ -82,6 +85,24 @@ Key Benefits of IoC:
 
 - **Flexibility:** Changes to system behavior or configurations can be made without altering the source code, which improves maintenance.
 
-### Dependecy inversion principal
+#### 2. Dependecy inversion principal (DIP)
+#### 3. Dependency Injection (DI)
+#### 4. Dependency chain
+#### 4. Concrete Injection
+you don't need to add interface for registering Dependency life cycle. With Concrete injection, you just
+register your class in the dependecy life cycle method.
 
-### Dependency Injection (DI)
+#### 5. Life cycle
+
+- Transient :  Every time, when you need to an instance of object, program create a fresh or new object 
+- Scope : Whenever you create an instance, it will be created once per user and shared across all the request (e.g. HTTP Request,Transaction ) 
+- Singleton : It creates just one instance all over the program until application will be destroyed
+
+> [!Tip] 
+> We cannot register a Scope object in a Singleton object but Transient oject is ok
+
+> [!Tip] 
+> We register both life time object in the Scope class, Transient and Singleton
+
+> [!Tip] 
+> We register both life time object in the Transient class, Scope and Singleton

@@ -1,4 +1,4 @@
-﻿namespace Net_Example.DIP;
+﻿namespace Net_Example.Dependency.TightCoupling;
 
 public class PersonHandler
 {
