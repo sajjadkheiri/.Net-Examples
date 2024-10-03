@@ -106,3 +106,6 @@ register your class in the dependecy life cycle method.
 
 > [!Tip] 
 > We register both life time object in the Transient class, Scope and Singleton
+
+
+### 6. Factory
