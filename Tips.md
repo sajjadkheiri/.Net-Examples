@@ -109,3 +109,11 @@ register your class in the dependecy life cycle method.
 
 
 ### 6. Factory
+### 7. Method Injection
+### 8. Constructor Injection
+IMiddleware interface
+
+> [!IMPORTANT]
+> If you have an interface with veriety of inherited class, you should
+> register all of classes with the interface. Eventually, you use
+> IEnumerable in routing

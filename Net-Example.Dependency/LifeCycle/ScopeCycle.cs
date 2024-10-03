@@ -1,9 +1,7 @@
 ﻿namespace Net_Example.Dependency;
 
-public class ScopeCycle
+public class ScopeCycle :IScopeCycle
 {
-
-
     private readonly Guid _guid;
     public ScopeCycle()
     {

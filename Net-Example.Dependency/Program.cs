@@ -3,23 +3,40 @@ using Net_Example.Dependency.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ISingletonDependency, SingletonDependency>();
-builder.Services.AddSingleton<ITransientCycle, TransientCycle>();
 builder.Services.AddSingleton<SingletonDependency>();
 
-builder.Services.AddScoped<IFactorySample>(x =>
-{
-    var isOdd = DateTime.Now.Second % 2 != 0;
+#region Life cycle
 
-    if (isOdd)
-    {
-        return new FirstFactorySample();
-    }
-    else
-    {
-        return new SecondFactorySample();
-    }
-});
+builder.Services.AddTransient<ITransientCycle, TransientCycle>();
+builder.Services.AddScoped<IScopeCycle, ScopeCycle>();
+builder.Services.AddSingleton<ISingletonDependency, SingletonDependency>();
+
+#endregion
+
+#region Factory
+
+// builder.Services.AddScoped<IFactorySample>(x =>
+// {
+//     var isOdd = DateTime.Now.Second % 2 != 0;
+
+//     if (isOdd)
+//     {
+//         return new FirstFactorySample();
+//     }
+//     else
+//     {
+//         return new SecondFactorySample();
+//     }
+// });
+
+// OR
+
+builder.Services.AddScoped<IFactorySample, FirstFactorySample>();
+builder.Services.AddScoped<IFactorySample, SecondFactorySample>();
+
+#endregion
+
+
 
 var app = builder.Build();
 
@@ -51,6 +68,14 @@ app.MapGet("/Concrete", async (HttpContext context, SingletonDependency singleto
 app.MapGet("/Factory", async (HttpContext context, IFactorySample factory) =>
 {
     await context.Response.WriteAsync(factory.GetName());
+});
+
+app.MapGet("/FactoryList", async (HttpContext context, IEnumerable<IFactorySample> factory) =>
+{
+    foreach (var item in factory)
+    {
+        await context.Response.WriteAsync(item.GetName());
+    }
 });
 
 app.MapGet("/", () => "Hello World!");
