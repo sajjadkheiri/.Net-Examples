@@ -70,7 +70,6 @@ When you want to excute middlewares in a particular route, you can add Map() in 
 
 ### Routing
 
-
 ### Dependency
 
 #### 1. Inversion of control (IOC)
@@ -108,12 +107,79 @@ register your class in the dependecy life cycle method.
 > We register both life time object in the Transient class, Scope and Singleton
 
 
-### 6. Factory
-### 7. Method Injection
-### 8. Constructor Injection
+#### 6. Factory
+#### 7. Method Injection
+#### 8. Constructor Injection
 IMiddleware interface
 
 > [!IMPORTANT]
 > If you have an interface with veriety of inherited class, you should
 > register all of classes with the interface. Eventually, you use
 > IEnumerable in routing
+
+### Client-Side package manager
+
+### HTTPS
+
+#### UseHttpsRedirection() Middleware
+
+```c#
+app.UseHttpsRedirection();
+```
+
+> [!IMPORTANT]
+> When we use UseHttpsRedirection in the Program class, All the http
+> request will cast to https with status 307. This approach can be 
+> vulnerable security against Man-in-the-middle attack
+
+#### HSTS
+
+Register Hsts service : 
+
+```c#
+builder.Services.AddHsts(opt => {
+    opt.MaxAge = TimeSpan.FromDays(1);
+    opt.IncludeSubDomains = true;
+});
+```
+
+Use optional Hsts middleware : 
+
+```c#
+if(!appEnvironment.IsProduction())
+{
+    app.UseHsts();
+}
+```
+
+<br />
+
+> [!IMPORTANT]
+> Hsts Always work with defautl HTTPS port(443).If you manually change
+> the Https port, Hsts will not be able to detect the port
+
+### Exception
+
+#### - Developer Exception
+
+```c#
+if(app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage(new DeveloperExceptionPageOption
+    {
+        SourceCodeLineCount = 8
+    });
+}
+```
+
+#### - Production Exception
+
+```c#
+if(app.Environment.IsProduction())
+{
+    app.UseExceptionHandler(new DeveloperExceptionPageOption
+    {
+        SourceCodeLineCount = 8
+    });
+}
+```
