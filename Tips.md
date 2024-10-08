@@ -183,3 +183,18 @@ if(app.Environment.IsProduction())
     });
 }
 ```
+
+### State management
+
+#### Cookie
+
+These are beneficial items to how we use Cookie : 
+
+- Domain
+- Expires
+- HttpOnly
+- IsEssential
+- MaxAge
+- Path
+- SameSite
+- Secure

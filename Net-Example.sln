@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Middleware", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Dependency", "Net-Example.Dependency\Net-Example.Dependency.csproj", "{83589067-813D-4D27-8A46-6E9AB3EA93CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Cookie", "Net-Example.Cookie\Net-Example.Cookie.csproj", "{D8FDFF41-9B8C-4C17-B78C-204D8592CF51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +40,9 @@ Global
 		{83589067-813D-4D27-8A46-6E9AB3EA93CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83589067-813D-4D27-8A46-6E9AB3EA93CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83589067-813D-4D27-8A46-6E9AB3EA93CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8FDFF41-9B8C-4C17-B78C-204D8592CF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FDFF41-9B8C-4C17-B78C-204D8592CF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FDFF41-9B8C-4C17-B78C-204D8592CF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FDFF41-9B8C-4C17-B78C-204D8592CF51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
