@@ -198,3 +198,10 @@ These are beneficial items to how we use Cookie :
 - Path
 - SameSite
 - Secure
+
+#### Cache
+
+- InMemory
+- Distributed
+
+#### Session
