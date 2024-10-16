@@ -205,3 +205,5 @@ These are beneficial items to how we use Cookie :
 - Distributed
 
 #### Session
+
+### Configuration
