@@ -207,3 +207,13 @@ These are beneficial items to how we use Cookie :
 #### Session
 
 ### Configuration
+
+#### Types of fetching data from config file
+
+
+#### Add extra config file
+
+#### which config is running?
+LunchSettings => ASPNETCORE_ENVIRONMENT
+
+#### Add .cs (dto) file for working with Configuration (IOption) 

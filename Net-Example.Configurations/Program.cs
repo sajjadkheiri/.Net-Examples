@@ -1,6 +1,24 @@
 
+using Microsoft.Extensions.Options;
+using Net_Example.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.SetBasePath(builder.Environment.ContentRootPath).AddJsonFile("appsettings.Sajjad.json");
+
+#region First option config
+
+builder.Services.Configure<LocationOtions>(builder.Configuration.GetSection("Location"));
+
+#endregion
+
+#region Second option config
+
+CourseOtions courseOtions = new CourseOtions();
+builder.Configuration.Bind("Course", courseOtions);
+builder.Services.AddSingleton<CourseOtions>();
+
+#endregion
 
 var app = builder.Build();
 
@@ -40,6 +58,28 @@ app.MapGet("/section", async (HttpContext context, IConfiguration config) =>
     context.Response.ContentType = "text/html";
     context.Response.StatusCode = 200;
     context.Response.WriteAsync(city);
+});
+
+#endregion
+
+#region First option config
+
+app.MapGet("/FirstOtion", async (HttpContext context, IOptions<LocationOtions> options) =>
+{
+    context.Response.ContentType = "text/html";
+    context.Response.StatusCode = 200;
+    context.Response.WriteAsync($"{options.Value.City} - {options.Value.Province}");
+});
+
+#endregion
+
+#region Second option config
+
+app.MapGet("/SecondOtion", async (HttpContext context, IConfiguration config) =>
+{
+    context.Response.ContentType = "text/html";
+    context.Response.StatusCode = 200;
+    context.Response.WriteAsync($"{courseOtions.Name} - {courseOtions.Author}");
 });
 
 #endregion
