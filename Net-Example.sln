@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Cache", "Net-Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Configurations", "Net-Example.Configurations\Net-Example.Configurations.csproj", "{1085B032-41D0-45A6-8349-FDF2F716AF81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Log", "Net-Example.Log\Net-Example.Log.csproj", "{2958002E-1149-4D00-A4A9-8E7C6C9ED652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +58,9 @@ Global
 		{1085B032-41D0-45A6-8349-FDF2F716AF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1085B032-41D0-45A6-8349-FDF2F716AF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1085B032-41D0-45A6-8349-FDF2F716AF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2958002E-1149-4D00-A4A9-8E7C6C9ED652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2958002E-1149-4D00-A4A9-8E7C6C9ED652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2958002E-1149-4D00-A4A9-8E7C6C9ED652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2958002E-1149-4D00-A4A9-8E7C6C9ED652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

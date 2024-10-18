@@ -217,3 +217,24 @@ These are beneficial items to how we use Cookie :
 LunchSettings => ASPNETCORE_ENVIRONMENT
 
 #### Add .cs (dto) file for working with Configuration (IOption) 
+
+
+### Log
+
+#### Log structure
+
+- Log level
+- Event category
+- Message
+- Parameters
+- Exceptions
+- EventId
+
+#### What is Log provider
+
+- NetScapades.RollingFile
+
+- Serilog
+    - Structured data
+    - Provided sink
+    - Enrichment
