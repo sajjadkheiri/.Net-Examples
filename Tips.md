@@ -221,7 +221,7 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
 
 ### Log
 
-#### Log structure
+#### Every Log consist of 
 
 - Log level
 - Event category
@@ -230,7 +230,9 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
 - Exceptions
 - EventId
 
-#### What is Log provider
+#### Types of Logging format
+
+##### Flat Log
 
 - NetScapades.RollingFile
 
@@ -238,3 +240,15 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
     - Structured data
     - Provided sink
     - Enrichment
+
+##### Structured Log
+
+- ELK
+- Splunk
+- seq
+
+
+
+#### Log verbosity
+
+#### Scope
