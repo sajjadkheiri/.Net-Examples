@@ -252,3 +252,18 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
 #### Log verbosity
 
 #### Scope
+
+
+### Rest Api
+
+#### 6 golden rulls of Rest
+
+- Client-Server
+- Stateless
+- Cacheable
+- Uniform interface
+- Layered system
+- Code on demand
+
+#### Minimal Api
+
