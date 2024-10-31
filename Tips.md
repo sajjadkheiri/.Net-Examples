@@ -30,24 +30,23 @@
 
 - Hosted service (IHostedService):
 
-It is a long running task
+It is a long-running task
 
 ### Service
-
-
 
 ### Middleware
 
 > [!IMPORTANT]
-> Middleware is registered once and It uses until the program is running
+> Middleware is registered once, and It uses until the program is running
 
 > [!IMPORTANT]
 > At the end of middleware, you must call Next() method to continue middlewares
 
 > [!TIP]
-> When the middleware is started,ordering is crucial.It means that First running middleware will come back the last response.
- <br /> MW Request 1 => MW Request 2 => MW Request 3
- <br /> MW Response 3 => MW Response 2 => MW Response 1 
+> When the middleware is started,ordering is crucial.It means that First running middleware will come back the last
+> response.
+<br /> MW Request 1 => MW Request 2 => MW Request 3
+<br /> MW Response 3 => MW Response 2 => MW Response 1
 
 <br />
 
@@ -56,23 +55,25 @@ It is a long running task
 - short circuit middleware:
 
 - Terminal middleware:
-      
+
 <br />
 
 #### Map
+
 When you want to excute middlewares in a particular route, you can add Map() in the Configure Pipeline.
 
 <br />
 
 > [!TIP]
->  When you have a map with some middlewares, the pipeline just excute your special map.what if you may have other middlewares.
-
+> When you have a map with some middlewares, the pipeline just excute your special map.what if you may have other
+> middlewares.
 
 ### Routing
 
 ### Dependency
 
 #### 1. Inversion of control (IOC)
+
 A class must just implement the business that you need.Otherwise,
 every work must be inverted in other class.
 
@@ -80,36 +81,45 @@ Key Benefits of IoC:
 
 - **Decoupling:** Objects rely less on actual implementations and more on abstractions, making the system more modular.
 
-- **Ease of Testing:** With dependencies injected, it is easier to replace genuine dependencies with mocks or stubs, enabling unit testing.
+- **Ease of Testing:** With dependencies injected, it is easier to replace genuine dependencies with mocks or stubs,
+  enabling unit testing.
 
-- **Flexibility:** Changes to system behavior or configurations can be made without altering the source code, which improves maintenance.
+- **Flexibility:** Changes to system behavior or configurations can be made without altering the source code, which
+  improves maintenance.
 
 #### 2. Dependecy inversion principal (DIP)
+
 #### 3. Dependency Injection (DI)
+
 #### 4. Dependency chain
+
 #### 4. Concrete Injection
+
 you don't need to add interface for registering Dependency life cycle. With Concrete injection, you just
 register your class in the dependecy life cycle method.
 
 #### 5. Life cycle
 
-- Transient :  Every time, when you need to an instance of object, program create a fresh or new object 
-- Scope : Whenever you create an instance, it will be created once per user and shared across all the request (e.g. HTTP Request,Transaction ) 
+- Transient :  Every time, when you need to an instance of object, program create a fresh or new object
+- Scope : Whenever you create an instance, it will be created once per user and shared across all the request (e.g. HTTP
+  Request,Transaction )
 - Singleton : It creates just one instance all over the program until application will be destroyed
 
-> [!Tip] 
+> [!Tip]
 > We cannot register a Scope object in a Singleton object but Transient oject is ok
 
-> [!Tip] 
+> [!Tip]
 > We register both life time object in the Scope class, Transient and Singleton
 
-> [!Tip] 
+> [!Tip]
 > We register both life time object in the Transient class, Scope and Singleton
 
-
 #### 6. Factory
+
 #### 7. Method Injection
+
 #### 8. Constructor Injection
+
 IMiddleware interface
 
 > [!IMPORTANT]
@@ -129,12 +139,12 @@ app.UseHttpsRedirection();
 
 > [!IMPORTANT]
 > When we use UseHttpsRedirection in the Program class, All the http
-> request will cast to https with status 307. This approach can be 
+> request will cast to https with status 307. This approach can be
 > vulnerable security against Man-in-the-middle attack
 
 #### HSTS
 
-Register Hsts service : 
+Register Hsts service :
 
 ```c#
 builder.Services.AddHsts(opt => {
@@ -143,7 +153,7 @@ builder.Services.AddHsts(opt => {
 });
 ```
 
-Use optional Hsts middleware : 
+Use optional Hsts middleware :
 
 ```c#
 if(!appEnvironment.IsProduction())
@@ -188,7 +198,7 @@ if(app.Environment.IsProduction())
 
 #### Cookie
 
-These are beneficial items to how we use Cookie : 
+These are beneficial items to how we use Cookie :
 
 - Domain
 - Expires
@@ -210,18 +220,17 @@ These are beneficial items to how we use Cookie :
 
 #### Types of fetching data from config file
 
-
 #### Add extra config file
 
 #### which config is running?
+
 LunchSettings => ASPNETCORE_ENVIRONMENT
 
-#### Add .cs (dto) file for working with Configuration (IOption) 
-
+#### Add .cs (dto) file for working with Configuration (IOption)
 
 ### Log
 
-#### Every Log consist of 
+#### Every Log consist of
 
 - Log level
 - Event category
@@ -247,12 +256,9 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
 - Splunk
 - seq
 
-
-
 #### Log verbosity
 
 #### Scope
-
 
 ### Rest Api
 
@@ -267,3 +273,48 @@ LunchSettings => ASPNETCORE_ENVIRONMENT
 
 #### Minimal Api
 
+#### Controller
+
+#### Attributes of controller
+
+- Route
+- HttpGet
+- HttpPost
+- HttpDelete
+- HttpPatch
+- HttpHead
+- AcceptVerbs
+
+#### what is the difference between ViewResult and IActionResult
+
+#### DI in Controller
+
+1. Instantiate in constructor
+
+2. Instantiate in input parameter
+
+```c#
+public IActonResult GetProduct(ProductDbContext dbContext)
+{
+    var product = dbContext.Prodcuts.ToList();
+    return Ok(product);
+}
+  ```
+
+#### Model Binding
+
+
+```c#
+[HttpGet(GetProduct/{id})]
+public IActonResult GetProduct(ProductDbContext dbContext,int id)
+{
+    var product = dbContext.Prodcuts.Where(x=>x.Id == id).ToList();
+    
+    if(product is null)
+        return NotFound();
+    
+    return Ok(product);
+}
+  ```
+
+#### What is the Over binding and Over posting
