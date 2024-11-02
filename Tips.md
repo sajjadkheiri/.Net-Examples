@@ -318,3 +318,24 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
   ```
 
 #### What is the Over binding and Over posting
+
+
+### Razor
+
+### View-Components
+
+### Tag Helpers
+
+### Model Binding
+
+### Model Validation
+
+### Filters
+
+### Identity
+
+#### What is the AAA
+
+- Authentication
+- Authorization
+- Accounting

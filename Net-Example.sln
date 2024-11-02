@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Configurations"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Log", "Net-Example.Log\Net-Example.Log.csproj", "{85686E51-76FB-4AD2-82A0-1256AD01EA55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Identity", "Net-Example.Identity\Net-Example.Identity.csproj", "{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{85686E51-76FB-4AD2-82A0-1256AD01EA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85686E51-76FB-4AD2-82A0-1256AD01EA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85686E51-76FB-4AD2-82A0-1256AD01EA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
