@@ -1,0 +1,32 @@
+@page
+@model Net_Example.Identity.List
+
+<h3>User List</h3>
+<hr/>
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Username</td>
+        <td>Email</td>
+    </tr>
+
+    @if (Model.Users.Count() < 1)
+    {
+        <tr>
+            <td colspan="3">There is no User in database</td>
+        </tr>
+    }
+    else
+    {
+        foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    }
+</table>
+<a class="btn btn-success" asp-page="Create">New User</a>
