@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Log", "Net-Exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.Identity", "Net-Example.Identity\Net-Example.Identity.csproj", "{CE9C6887-2E4D-451F-9E47-B9D4FCA8D1FD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net-Example.Testing", "Net-Example.Testing", "{4CD9EF6F-14BE-4C8C-A065-E4F6E6DC279E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
