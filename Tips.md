@@ -350,3 +350,15 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 - Arrange
 - Act
 - Assert
+
+
+#### what is the Detroit and London Testing
+
+#### Naming convention
+
+#### Exception Assert
+
+#### What is the Trait
+
+#### How to print messages in Test Detail Summary
+
