@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Net-Example.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Test", "Net-Example.Testing\Calculator.Test\Calculator.Test.csproj", "{C4ADB641-3248-4AC1-84FE-0974A8A023D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net-Example.HttpClient", "Net-Example.HttpClient\Net-Example.HttpClient.csproj", "{2C0151F5-C609-42CF-BA8E-F14731E09B76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{C4ADB641-3248-4AC1-84FE-0974A8A023D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4ADB641-3248-4AC1-84FE-0974A8A023D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4ADB641-3248-4AC1-84FE-0974A8A023D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0151F5-C609-42CF-BA8E-F14731E09B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0151F5-C609-42CF-BA8E-F14731E09B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0151F5-C609-42CF-BA8E-F14731E09B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0151F5-C609-42CF-BA8E-F14731E09B76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -362,3 +362,16 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 
 #### How to print messages in Test Detail Summary
 
+### HttpClient
+
+#### IHttpClientFactory
+
+#### why we should use IhttpClientFactory instead of HttpClient in c#
+
+#### HttpClient Flow
+
+![HttpClient Flow](https://miro.medium.com/v2/resize:fit:1400/1*b1Z5CSqXhvQ7_wupYgJwSw.png)
+
+#### IHttpClientFactory Lifetime
+
+IHttpClientFactory pool => expire after 2 minutes 
