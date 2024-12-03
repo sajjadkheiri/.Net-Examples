@@ -1,7 +1,0 @@
-@HostName = http://localhost:5295
-
-GET {{HostName}}/api/HttpClientSample HTTP/1.1
-
-###
-
-GET {{HostName}}/api/HttpClientSample/GetById

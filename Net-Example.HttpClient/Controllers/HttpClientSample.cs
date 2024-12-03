@@ -9,8 +9,8 @@ namespace Net_Example.HttpClient.Controllers
     [ApiController]
     public class HttpClientSample : ControllerBase
     {
-        [HttpGet]
-        public async Task<IActionResult> GetAl()
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
         {
             using (var client = new System.Net.Http.HttpClient())
             {

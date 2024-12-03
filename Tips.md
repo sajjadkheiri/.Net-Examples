@@ -303,7 +303,6 @@ public IActonResult GetProduct(ProductDbContext dbContext)
 
 #### Model Binding
 
-
 ```c#
 [HttpGet(GetProduct/{id})]
 public IActonResult GetProduct(ProductDbContext dbContext,int id)
@@ -318,7 +317,6 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
   ```
 
 #### What is the Over binding and Over posting
-
 
 ### Razor
 
@@ -340,7 +338,6 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 - Authorization
 - Accounting
 
-
 ### Authentication and Authorization
 
 ### Testing (XUnit)
@@ -350,7 +347,6 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 - Arrange
 - Act
 - Assert
-
 
 #### what is the Detroit and London Testing
 
@@ -374,4 +370,51 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 
 #### IHttpClientFactory Lifetime
 
-IHttpClientFactory pool => expire after 2 minutes 
+IHttpClientFactory pool => expire after 2 minutes
+
+#### Named client
+
+When you want to use options in different method, you add in configuration.
+
+```c#
+builder.Services.AddHttpClient("posts", client =>
+{
+    client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+});
+```
+
+#### Typed client
+
+It is a rapper on the Named client that you can add HttpClient in constructor,
+then register in the program file.
+
+Program.cs
+
+```c#
+builder.Services.AddHttpClient<PostServices>();
+```
+
+PostServices.cs
+
+```c#
+public class PostServices
+{
+    private readonly System.Net.Http.HttpClient _httpClient;
+
+    public PostServices(System.Net.Http.HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+        _httpClient.BaseAddress = new Uri("http://localhost:5000");
+    }
+
+    public async Task<List<Post>> GetAllAsync()
+    {
+        var result = await _httpClient.GetStringAsync("/posts");
+        return JsonConvert.DeserializeObject<List<Post>>(result);
+    }
+}
+```
+
+#### Http Message Handler
+
+#### Resiliency (Polly)
