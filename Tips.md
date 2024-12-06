@@ -364,6 +364,27 @@ public IActonResult GetProduct(ProductDbContext dbContext,int id)
 
 #### why we should use IhttpClientFactory instead of HttpClient in c#
 
+1. Avoiding Socket Exhaustion
+
+   - If you create a new instance of HttpClient for each request, $\textsf{\color{#fbbc05}{ the connections may not be properly closed or reused}}$. This can exhaust the number of available sockets and result in SocketException errors, especially in applications that make many HTTP requests.
+   - IHttpClientFactory ensures that the underlying HttpClient instances are $\textsf{\color{#fbbc05}{properly pooled and reused}}$, preventing socket exhaustion by managing their lifecycle.
+
+2. Improved Performance
+
+   - Creating and disposing of HttpClient instances repeatedly is inefficient. IHttpClientFactory allows for the reuse of HttpClient instances, improving both performance and resource management.
+
+3. Centralized Configuration
+
+   - IHttpClientFactory allows you to centrally configure and manage HTTP clients. For example, you can configure default headers, timeouts, and base addresses that are applied to all requests made by that client.
+4. Support for Named and Typed Clients
+
+5. Integration with Dependency Injection (DI)
+
+   - You can register and inject HttpClient instances into your services in a way that is both flexible and testable. 
+   - Using IHttpClientFactory ensures that the HttpClient is properly managed by the DI container and can be easily replaced with mock implementations for unit testing.
+
+6. Retries, Circuit Breakers, and Custom Handlers (Polly)
+
 #### HttpClient Flow
 
 ![HttpClient Flow](https://miro.medium.com/v2/resize:fit:1400/1*b1Z5CSqXhvQ7_wupYgJwSw.png)
@@ -420,3 +441,20 @@ public class PostServices
 #### Resiliency (Polly)
 
 [Polly Document](https://www.pollydocs.org/)
+
+
+### Messaging (RabbitMQ)
+
+#### RabbitMQ protocols
+
+#### what is AMQP
+
+#### structure of RabbitMQ
+
+- Channel
+- Exchange
+  - Direct exchange
+  - Fanout exchange
+  - Topic exchange
+  - Header exchange
+- Queue
