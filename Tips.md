@@ -418,3 +418,5 @@ public class PostServices
 #### Http Message Handler
 
 #### Resiliency (Polly)
+
+[Polly Document](https://www.pollydocs.org/)
